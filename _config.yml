@@ -2,8 +2,13 @@
 
 paginate: 10 # pagination based on number of posts
 paginate_path: "page:num"
+<<<<<<< HEAD
 exclude: ["README.md", _drafts] # files to exclude
 highlighter: pygments
+=======
+exclude: ["README.md"] # files to exclude
+highlighter: rouge
+>>>>>>> e0927eda053ee9f663e60677991f4f56b6bf9789
 markdown: kramdown
 disqus: mu-omega
 google_analytics: mu-omega

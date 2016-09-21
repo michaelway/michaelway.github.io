@@ -1,0 +1,44 @@
+<p>I was first drawn to R by the beautiful graphics that it can produce.  However, when I first started using it, creating the perfect plot often involved copying code and then tweaking away until it was just right… Then forgetting the code a few months later, scratching my head and starting all over again. Not only this but I began to use R for more complex tasks involving data analysis and functions I often became overwhelmed, writing redundant code over and over again.</p>
+
+<p>Learning how to create my first R-package helped me enormoulsy with these problems.  First, it allowed me to create a single place my code was stored, and second it allowed mw to install my code onto any machine in which I was running an analysis. Not only this, but it makes sharing your code so much easier (expecially when I had figure out GitHub). Since I have learnt how to do this, it has saved me tonnes of time so I wanted to share some of the tips that I have for this process.</p>
+
+<h2 id="the-basics">The Basics</h2>
+
+<p>Before creating your own package have a play around with a package that you have already installed (I would suggest running everything through the <a href="https://www.rstudio.com/" title="RStudio">link</a> as it makes coding in R so much simpler).</p>
+
+<p>For example, load up the popular package ggplot:</p>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">install.packages</span><span class="p">(</span><span class="s2">"ggplot2"</span><span class="p">)</span><span class="w">
+</span><span class="n">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span></code></pre></figure>
+
+<p>This process loads the code to run all of the ggplot2 plotting functions into your current R session, whilst giving access to all of the help documentation telling you how to run the thing. Try typing ‘f1’ next to a ggplot2 function to get a help page giving information about how to use the function, its author and examples typically with some test data.  Use right!  You can easily create something just like this with your own code.</p>
+
+<h2 id="creating-your-first-package">Creating your first package</h2>
+
+<p>Before creating it is important to understand the structure of an R-package 
+A simple R package should minimally contain three file types:</p>
+<ul>
+  <li>*.R files (where you store your code)</li>
+  <li>A NAMESPACE file (which contains all the information R needs to install the package)</li>
+  <li>*.rmd files (where any help documentation for your code is stored)</li>
+</ul>
+
+<p>The package directory containing these files should include subdirectories such as R/ and /man where .r and .rmd files are store, respectively.</p>
+
+<p>The first thing to do before creating your package is to create the directory structure:</p>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">#Set your working directory to your home folder
+</span><span class="n">setwd</span><span class="p">(</span><span class="s2">"~/"</span><span class="p">)</span><span class="w">
+
+</span><span class="c1">#Create parent directory for package
+</span><span class="n">dir.create</span><span class="p">(</span><span class="s2">"FirstPackage"</span><span class="p">)</span><span class="w">
+
+</span><span class="c1">#Create /man and /R subdirectories:
+</span><span class="n">dir.create</span><span class="p">(</span><span class="s2">"FirstPackage/R"</span><span class="p">)</span><span class="w">
+</span><span class="n">dir.create</span><span class="p">(</span><span class="s2">"FirstPackage/man"</span><span class="p">)</span></code></pre></figure>
+
+<p>Now all of this sounds a bit confusing, and it is.  However, there are tools</p>
+
+<p>First things create the package directorry structure:</p>
+
+<h2 id="add-your-functions">Add your functions</h2>
