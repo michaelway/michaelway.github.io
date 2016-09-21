@@ -3,7 +3,7 @@
 paginate: 10 # pagination based on number of posts
 paginate_path: "page:num"
 <<<<<<< HEAD
-exclude: ["README.md", "_drafts/*"] # files to exclude
+exclude: ["README.md"] # files to exclude
 highlighter: pygments
 =======
 exclude: ["README.md"] # files to exclude
